@@ -221,6 +221,38 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   # Dump fingerprints
   script.Print("Target: {}".format(target_info.fingerprint))
 
+  # Build info
+  script.Print("                                                  "); 
+  script.Print("  _     _                              ___  ____  "); 
+  script.Print(" | |   (_)_ __   ___  __ _  __ _  ___ / _ \/ ___| "); 
+  script.Print(" | |   | | '_ \ / _ \/ _` |/ _` |/ _ \ | | \___ \ "); 
+  script.Print(" | |___| | | | |  __/ (_| | (_| |  __/ |_| |___) |"); 
+  script.Print(" |_____|_|_| |_|\___|\__,_|\__, |\___|\___/|____/ "); 
+  script.Print("                     _      |___/                 "); 
+  script.Print("                   _| |_                          "); 
+  script.Print("                  |_   _|                         "); 
+  script.Print("                    |_|                           "); 
+  script.Print("                                                  "); 
+  script.Print("                                                  "); 
+                   
+  buildid = target_info.GetBuildProp("ro.modversion")
+  androidver = target_info.GetBuildProp("ro.build.version.release")
+  buildidn = target_info.GetBuildProp("ro.build.id")
+  buildday = target_info.GetBuildProp("ro.build.date")
+  securep = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("ro.build.product")
+  manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
+  script.Print("***********************************************");
+  script.Print(" ROM version      : %s"%(buildid));
+  script.Print(" Android version  : %s"%(androidver));
+  script.Print(" Security patch   : %s"%(securep));
+  script.Print(" Build date       : %s"%(buildday));
+  script.Print("***********************************************");
+  script.Print(" Device           : %s"%(device));
+  script.Print(" Manufacturer     : %s"%(manufacturer));
+  script.Print("***********************************************");
+  script.Print("                                         ");
+
   device_specific.FullOTA_InstallBegin()
 
   CopyInstallTools(output_zip)
