@@ -228,11 +228,12 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print(" | |   | | '_ \ / _ \/ _` |/ _` |/ _ \ | | \___ \ "); 
   script.Print(" | |___| | | | |  __/ (_| | (_| |  __/ |_| |___) |"); 
   script.Print(" |_____|_|_| |_|\___|\__,_|\__, |\___|\___/|____/ "); 
-  script.Print("                     _      |___/                 "); 
-  script.Print("                   _| |_                          "); 
-  script.Print("                  |_   _|                         "); 
-  script.Print("                    |_|                           "); 
-  script.Print("                                                  "); 
+  script.Print("              _             |___/                 "); 
+  script.Print("            _| |_                                 "); 
+  script.Print("           |_   _|_                               "); 
+  script.Print("             |_|_| |_                             "); 
+  script.Print("               |_   _|                            "); 
+  script.Print("                 |_|               Android 12.1   "); 
   script.Print("                                                  "); 
                    
   buildid = target_info.GetBuildProp("ro.modversion")
