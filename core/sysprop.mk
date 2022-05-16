@@ -206,6 +206,8 @@ else
   BUILD_DISPLAY_ID := $(BUILD_DESC)
 endif
 
+BUILD_DISPLAY_ID := LineageOS++-19.1-Version-$(LINEAGEOSPP_VERSION)
+
 # TARGET_BUILD_FLAVOR and ro.build.flavor are used only by the test
 # harness to distinguish builds. Only add _asan for a sanitized build
 # if it isn't already a part of the flavor (via a dedicated lunch
