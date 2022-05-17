@@ -399,14 +399,6 @@ else # !user_variant
   ADDITIONAL_SYSTEM_PROPERTIES += ro.allow.mock.location=1
 endif # !user_variant
 
-ifeq (true,$(strip $(enable_target_debugging)))
-  # Target is more debuggable and adbd is on by default
-  ADDITIONAL_SYSTEM_PROPERTIES += ro.debuggable=1
-else # !enable_target_debugging
-  # Target is less debuggable and adbd is off by default
-  ADDITIONAL_SYSTEM_PROPERTIES += ro.debuggable=0
-endif # !enable_target_debugging
-
 ## eng ##
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
