@@ -378,9 +378,6 @@ ifneq (,$(user_variant))
   ADDITIONAL_SYSTEM_PROPERTIES += ro.secure=1
   ADDITIONAL_SYSTEM_PROPERTIES += security.perf_harden=1
 
-  ifeq ($(user_variant),user)
-    ADDITIONAL_SYSTEM_PROPERTIES += ro.adb.secure=1
-  endif
 
   ifeq ($(user_variant),userdebug)
     # Pick up some extra useful tools
@@ -401,6 +398,14 @@ else # !user_variant
   # Allow mock locations by default for non user builds
   ADDITIONAL_SYSTEM_PROPERTIES += ro.allow.mock.location=1
 endif # !user_variant
+
+ifeq (true,$(strip $(enable_target_debugging)))
+  # Target is more debuggable and adbd is on by default
+  ADDITIONAL_SYSTEM_PROPERTIES += ro.debuggable=1
+else # !enable_target_debugging
+  # Target is less debuggable and adbd is off by default
+  ADDITIONAL_SYSTEM_PROPERTIES += ro.debuggable=0
+endif # !enable_target_debugging
 
 ## eng ##
 
